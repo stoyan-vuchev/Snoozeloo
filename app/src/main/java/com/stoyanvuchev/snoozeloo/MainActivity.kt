@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -13,9 +15,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.SnoozelooTheme
+import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.color.LocalColorScheme
+import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.shape.LocalShapes
 
 class MainActivity : ComponentActivity() {
 
@@ -28,7 +34,9 @@ class MainActivity : ComponentActivity() {
             SnoozelooTheme {
 
                 Scaffold(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
+                    containerColor = LocalColorScheme.current.surface,
+                    contentColor = LocalColorScheme.current.onSurface
                 ) { innerPadding ->
 
                     Greeting(
@@ -56,8 +64,15 @@ fun Greeting(
 ) {
 
     Text(
+        modifier = Modifier
+            .padding(horizontal = 16.dp)
+            .fillMaxWidth()
+            .clip(LocalShapes.current.medium)
+            .background(LocalColorScheme.current.surfaceContainer)
+            .padding(16.dp),
         text = "Hello $name!",
-        style = MaterialTheme.typography.titleMedium
+        style = MaterialTheme.typography.titleMedium,
+        color = LocalColorScheme.current.onSurfaceContainer
     )
 
 }
