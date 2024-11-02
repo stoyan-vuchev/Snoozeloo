@@ -56,3 +56,4 @@ interface ColorScheme {
 }
 
 val LocalColorScheme = staticCompositionLocalOf<ColorScheme> { SnoozelooColorScheme }
+val LocalContentColor = staticCompositionLocalOf { SnoozelooColorScheme.onSurface }

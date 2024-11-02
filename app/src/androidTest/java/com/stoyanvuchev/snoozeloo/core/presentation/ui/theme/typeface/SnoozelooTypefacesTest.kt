@@ -1,4 +1,4 @@
-package com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.color
+package com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.typeface
 
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
@@ -12,20 +12,20 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class SnoozelooColorSchemeTest {
+class SnoozelooTypefacesTest {
 
     @get:Rule
     val composeRule = createComposeRule()
 
     @Test
-    fun colorSchemeIsProvided() = runTest {
+    fun typefacesAreProvided() = runTest {
         composeRule.setContent {
 
-            val expected = remember { SnoozelooColorScheme }
+            val expected = remember { SnoozelooTypefaces }
 
-            CompositionLocalProvider(LocalColorScheme provides expected) {
+            CompositionLocalProvider(LocalTypefaces provides expected) {
 
-                val actual = LocalColorScheme.current
+                val actual = LocalTypefaces.current
                 assertThat(actual).isEqualTo(expected)
 
             }
@@ -34,14 +34,14 @@ class SnoozelooColorSchemeTest {
     }
 
     @Test
-    fun contentColorIsProvided() = runTest {
+    fun textStyleIsProvided() = runTest {
         composeRule.setContent {
 
-            val expected = remember { SnoozelooColorScheme.onSurface }
+            val expected = remember { SnoozelooTypefaces.bodyLarge }
 
-            CompositionLocalProvider(LocalContentColor provides expected) {
+            CompositionLocalProvider(LocalTextStyle provides expected) {
 
-                val actual = LocalContentColor.current
+                val actual = LocalTextStyle.current
                 assertThat(actual).isEqualTo(expected)
 
             }

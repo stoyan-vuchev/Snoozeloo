@@ -38,7 +38,6 @@ fun SnoozelooTheme(
     ) {
 
         MaterialTheme(
-            typography = Typography,
             content = content
         )
 
