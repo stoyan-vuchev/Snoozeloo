@@ -33,4 +33,20 @@ class SnoozelooColorSchemeTest {
         }
     }
 
+    @Test
+    fun contentColorIsProvided() = runTest {
+        composeRule.setContent {
+
+            val expected = remember { SnoozelooColorScheme.onSurface }
+
+            CompositionLocalProvider(LocalContentColor provides expected) {
+
+                val actual = LocalContentColor.current
+                assertThat(actual).isEqualTo(expected)
+
+            }
+
+        }
+    }
+
 }
