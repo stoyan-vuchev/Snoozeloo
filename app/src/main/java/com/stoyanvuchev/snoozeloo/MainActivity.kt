@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -19,9 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.SnoozelooTheme
-import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.color.LocalColorScheme
-import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.shape.LocalShapes
-import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.typeface.LocalTypefaces
+import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.Theme
 
 class MainActivity : ComponentActivity() {
 
@@ -33,19 +31,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             SnoozelooTheme {
 
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-                    containerColor = LocalColorScheme.current.surface,
-                    contentColor = LocalColorScheme.current.onSurface
-                ) { innerPadding ->
-
-                    Greeting(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding)
-                    )
-
-                }
+                Greeting(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Theme.colorScheme.surface)
+                        .systemBarsPadding()
+                )
 
             }
         }
@@ -63,16 +54,17 @@ fun Greeting(
     contentAlignment = Alignment.Center
 ) {
 
-    Text(
+    BasicText(
         modifier = Modifier
             .padding(horizontal = 16.dp)
             .fillMaxWidth()
-            .clip(LocalShapes.current.medium)
-            .background(LocalColorScheme.current.surfaceContainer)
+            .clip(Theme.shapes.medium)
+            .background(Theme.colorScheme.surfaceContainer)
             .padding(16.dp),
         text = "Hello $name!",
-        style = LocalTypefaces.current.labelMedium,
-        color = LocalColorScheme.current.onSurfaceContainer
+        style = Theme.typefaces.labelMedium.copy(
+            color = Theme.colorScheme.onSurfaceContainer
+        )
     )
 
 }
