@@ -18,6 +18,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.stoyanvuchev.snoozeloo.core.presentation.ui.components.topbar.TopBar
+import com.stoyanvuchev.snoozeloo.core.presentation.ui.components.topbar.TopBarTitle
 import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.SnoozelooTheme
 import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.Theme
 
@@ -35,7 +37,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .fillMaxSize()
                         .background(Theme.colorScheme.surface)
-                        .systemBarsPadding()
                 )
 
             }
@@ -56,6 +57,7 @@ fun Greeting(
 
     BasicText(
         modifier = Modifier
+            .systemBarsPadding()
             .padding(horizontal = 16.dp)
             .fillMaxWidth()
             .clip(Theme.shapes.medium)
@@ -65,6 +67,11 @@ fun Greeting(
         style = Theme.typefaces.labelMedium.copy(
             color = Theme.colorScheme.onSurfaceContainer
         )
+    )
+
+    TopBar(
+        modifier = Modifier.align(Alignment.TopStart),
+        title = { TopBarTitle(text = "Your Alarms") }
     )
 
 }
