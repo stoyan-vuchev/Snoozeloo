@@ -4,7 +4,6 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import sv.lib.squircleshape.CornerSmoothing
 import sv.lib.squircleshape.SquircleShape
 
 @Immutable
@@ -14,21 +13,21 @@ object SnoozelooShapes : Shapes {
     override val small: Shape
         get() = SquircleShape(
             radius = 8.dp,
-            cornerSmoothing = CornerSmoothing.Small
+            cornerSmoothing = .6f
         )
 
     // A medium shape for cards and other related components.
     override val medium: Shape
         get() = SquircleShape(
             radius = 16.dp,
-            cornerSmoothing = CornerSmoothing.Small
+            cornerSmoothing = .6f
         )
 
     // A shape large shape for interactive components e.g. buttons and switches.
     override val large: Shape
         get() = SquircleShape(
             percent = 100,
-            cornerSmoothing = CornerSmoothing.Small
+            cornerSmoothing = .6f
         )
 
 }

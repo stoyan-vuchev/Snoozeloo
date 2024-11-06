@@ -60,7 +60,6 @@ compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 # Persistent Storage Libs
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastorePreferencesVersion" }
@@ -112,8 +111,7 @@ compose = [
     "compose-foundation",
     "compose-ui",
     "compose-ui-graphics",
-    "compose-ui-tooling-preview",
-    "compose-material-icons-extended"
+    "compose-ui-tooling-preview"
 ]
 
 compose-debug = [
