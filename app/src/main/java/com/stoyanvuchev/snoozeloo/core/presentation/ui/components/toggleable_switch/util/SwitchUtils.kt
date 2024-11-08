@@ -25,8 +25,8 @@ object SwitchUtils {
     fun switchColors(
         switchedOnBackgroundColor: Color = Theme.colorScheme.primary,
         switchedOnToggleColor: Color = Theme.colorScheme.onPrimary,
-        switchedOffBackgroundColor: Color = Theme.colorScheme.primary.copy(alpha = .33f),
-        switchedOffToggleColor: Color = Theme.colorScheme.onPrimary,
+        switchedOffBackgroundColor: Color = Theme.colorScheme.disabledPrimary,
+        switchedOffToggleColor: Color = Theme.colorScheme.onDisabledPrimary,
     ) = SwitchColors(
         switchedOnBackgroundColor = switchedOnBackgroundColor,
         switchedOnToggleColor = switchedOnToggleColor,
