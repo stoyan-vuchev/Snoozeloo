@@ -59,9 +59,10 @@ private fun TopBarLayout(
     }
 
     SubcomposeLayout(
-        modifier = modifier
+        modifier = Modifier
             .height(topBarHeight)
-            .background(color = Theme.colorScheme.surface),
+            .background(color = Theme.colorScheme.surface)
+            .then(modifier),
     ) { constraints ->
 
         val layoutWidth = constraints.maxWidth
