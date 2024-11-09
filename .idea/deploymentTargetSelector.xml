@@ -4,21 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-11-06T18:15:14.149913600Z">
+        <DropdownSelection timestamp="2024-11-09T00:57:21.370592300Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\stfir\.android\avd\Pixel_7_Pro.avd" />
-            </handle>
-          </Target>
-        </DropdownSelection>
-        <DialogSelection />
-      </SelectionState>
-      <SelectionState runConfigName="SnoozelooColorSchemeTest">
-        <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-11-02T20:32:46.260321500Z">
-          <Target type="DEFAULT_BOOT">
-            <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\stfir\.android\avd\Pixel_7_Pro.avd" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=R5CX22P8R0T" />
             </handle>
           </Target>
         </DropdownSelection>
@@ -35,6 +24,17 @@
       </SelectionState>
       <SelectionState runConfigName="ScaffoldTest">
         <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="CardTest">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2024-11-09T01:10:02.745850700Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\stfir\.android\avd\Pixel_7_Pro.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
       </SelectionState>
     </selectionStates>
   </component>

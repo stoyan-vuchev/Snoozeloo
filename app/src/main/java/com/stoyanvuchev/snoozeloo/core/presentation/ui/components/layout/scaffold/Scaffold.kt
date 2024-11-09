@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.offset
 import com.stoyanvuchev.snoozeloo.core.presentation.ui.components.fab.utils.FloatingActionButtonUtils
 import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.Theme
 import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.color.LocalContentColor
+import com.stoyanvuchev.snoozeloo.core.presentation.ui.theme.typeface.LocalTextStyle
 
 @Composable
 fun Scaffold(
@@ -31,7 +32,10 @@ fun Scaffold(
     contentColor: Color = Theme.colorScheme.onSurface,
     contentWindowInsets: WindowInsets = WindowInsets.systemBars,
     content: @Composable (safePadding: PaddingValues) -> Unit
-) = CompositionLocalProvider(LocalContentColor provides contentColor) {
+) = CompositionLocalProvider(
+    LocalContentColor provides contentColor,
+    LocalTextStyle provides Theme.typefaces.bodyLarge
+) {
 
     ScaffoldLayout(
         modifier = modifier,
@@ -103,7 +107,8 @@ private fun ScaffoldLayout(
 
                 val insets = contentWindowInsets.asPaddingValues(this@SubcomposeLayout)
                 val safePadding = PaddingValues(
-                    top = insets.calculateTopPadding().plus(topBarHeight.toDp()),
+                    top = if (topBarHeight > 0) topBarHeight.toDp()
+                    else insets.calculateTopPadding(),
                     bottom = insets.calculateBottomPadding().plus(fabHeight.toDp()),
                     start = insets.calculateStartPadding((this@SubcomposeLayout).layoutDirection),
                     end = insets.calculateEndPadding((this@SubcomposeLayout).layoutDirection)
